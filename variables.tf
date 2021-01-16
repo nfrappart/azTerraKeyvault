@@ -25,7 +25,6 @@ variable "KeyVaultTenantID" {
   description = "The tenant Id of the vault"
 }
 
-
 variable "KeyVaultEnabledforDeployment" {
   type    = string
   default = "true"
@@ -40,7 +39,6 @@ variable "KeyVaultEnabledforTempDeploy" {
   type    = string
   default = "true"
 }
-
 
 # Variable to define the Tag
 
