@@ -47,18 +47,11 @@ resource "azurerm_key_vault_access_policy" "TerraKeyVaultPolicyForTFSP" {
   object_id    = data.azurerm_client_config.TerraClientConfig.object_id
 
   key_permissions = [
-    "get",
-    "create",
-    "delete",
-    "list",
-    "update",
+    "backup", "create", "decrypt", "delete", "encrypt", "get", "import", "list", "purge", "recover", "restore", "sign", "unwrapKey", "update", "verify", "wrapKey"
   ]
 
   secret_permissions = [
-    "get",
-    "delete",
-    "list",
-    "set",
+    "backup", "delete", "get", "list", "purge", "recover", "restore", "set"
   ]
 
   certificate_permissions = [ 
