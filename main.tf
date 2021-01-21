@@ -43,8 +43,8 @@ resource "azurerm_key_vault" "TerraKeyVault" {
 # add access to keyvault for terraform Service Principal
 resource "azurerm_key_vault_access_policy" "TerraKeyVaultPolicyForTFSP" {
   key_vault_id = azurerm_key_vault.TerraKeyVault.id
-  tenant_id    = data.TerraClientConfig.current_azure_client_config.tenant_id
-  object_id    = data.TerraClientConfig.current_azure_client_config.object_id
+  tenant_id    = data.azurerm_client_config.TerraClientConfig.tenant_id
+  object_id    = data.azurerm_client_config.TerraClientConfig.object_id
 
   key_permissions = [
     "get",
