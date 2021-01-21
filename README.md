@@ -9,7 +9,7 @@ This module will create a Key Vault in the current subscription. It will also gr
 
 ```hcl
 module "Kv-DemoVault" {
-  source = "github.com/nfrappart/azTerraKeyvault?ref=v1.0.1"
+  source = "github.com/nfrappart/azTerraKeyvault?ref=v1.0.2"
   KeyVaultName = "Kv-testvault"
   #KeyVaultLocation = "westeurope" #Optional. Default value is "westeurope"
   KeyVaultRgName = module.Rg_Demo.Name
