@@ -27,7 +27,6 @@ resource "azurerm_key_vault" "TerraKeyVault" {
   #Tags
   tags = {
     Environment       = var.EnvironmentTag
-    EnvironmentUsage  = var.EnvironmentUsageTag
     Owner             = var.OwnerTag
     ProvisioningDate  = var.ProvisioningDateTag
     ProvisioningMode  = var.ProvisioningModeTag
