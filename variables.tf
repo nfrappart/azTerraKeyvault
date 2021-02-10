@@ -46,14 +46,14 @@ variable "EnvironmentTag" {
   type    = string
   default = "Test"
 }
+variable "UsageTag" {
+  type = string
+  default = "PoC usage only"
+}
 
 variable "OwnerTag" {
   type = string
   default = "Nate"
-}
-
-variable "ProvisioningDateTag" {
-  type = string
 }
 
 variable "ProvisioningModeTag" {

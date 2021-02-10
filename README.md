@@ -19,7 +19,7 @@ module "Kv-DemoVault" {
   #KeyVaultEnabledforDiskEncrypt = "true" #Optional. Default is set to "true"
   #KeyVaultEnabledforTempDeploy = "true" #Optional. Default is set to "true"
   OwnerTag = "Nate" #Optional. But I suggest you change it though :)
-  ProvisioningDateTag = timestamp() #This Tag is configured to NOT be updated unless resource is destroyed
+  UsageTag = "Demo" #Optional. Default value is "PoC Usage Only"
   ProvisioningModeTag = "Terraform" 
 }
 ```
