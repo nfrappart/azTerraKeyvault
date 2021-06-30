@@ -29,6 +29,10 @@ variable "SoftDeleteRetention" {
   default = 7
 }
 
+variable "purgeProtectionEnabled" {
+  default = false
+}
+
 variable "EnabledForDeployment" {
   type    = string
   default = "true"

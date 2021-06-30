@@ -12,6 +12,7 @@ resource "azurerm_key_vault" "TerraKeyVault" {
   sku_name            = var.SkuName
   tenant_id           = var.TenantID
   soft_delete_retention_days  = var.SoftDeleteRetention
+  purge_protection_enabled = var.purgeProtectionEnabled
 
   ########################
   #Others Keyvault param
