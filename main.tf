@@ -2,9 +2,10 @@
 # Module to create Keyvault Resource  #
 #######################################
 
+#Get current session informations
+data "azurerm_client_config" "TerraClientConfig" {}
 
 #KeyVault Creation
-
 resource "azurerm_key_vault" "TerraKeyVault" {
   name                = var.Name
   location            = var.Location
@@ -36,4 +37,30 @@ resource "azurerm_key_vault" "TerraKeyVault" {
       tags["ProvisioningDate"],
     ]
   }
+}
+
+
+# add access to keyvault for terraform Service Principal
+resource "azurerm_key_vault_access_policy" "TerraKeyVaultPolicyForTFSP" {
+  key_vault_id = azurerm_key_vault.TerraKeyVault.id
+  tenant_id    = data.azurerm_client_config.TerraClientConfig.tenant_id
+  object_id    = data.azurerm_client_config.TerraClientConfig.object_id
+
+  key_permissions = [
+    "backup", "create", "decrypt", "delete", "encrypt", "get", "import", "list", "purge", "recover", "restore", "sign", "unwrapKey", "update", "verify", "wrapKey"
+  ]
+
+  secret_permissions = [
+    "backup", "delete", "get", "list", "purge", "recover", "restore", "set"
+  ]
+
+  certificate_permissions = [ 
+    "create",
+    "delete",
+    "get",
+    "getissuers",
+    "list",
+    "listissuers",
+    "update",     
+  ]
 }
